@@ -1,30 +1,75 @@
 *, html{
   padding: 0;
   margin: 0;
-  background: black;
+}
+:root {
+  --stagger-delay: 400ms;
+  --blue: #1e66f5;
+  --green: #40a02b;
+  --yellow: #df8e1d;
+
+}
+@font-face {
+  font-family: 'logo';
+  src: url('../static/font/ColoPro-Trial-Black.woff2');
+}
+
+.logo{
+  display: flex;
+  font-family: logo;
+  font-size: 4rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  animation: sponsors_anim 800ms;
+  animation-fill-mode: backwards;
+  transition: all 500ms linear;
+
 }
 
 .sponsors{
   display: flex;
+  flex-wrap:wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
   gap: 1rem;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  /* overflow-x: scroll; */
+  /* overflow-y: hidden; */
+  /* max-height: 8rem; */
   scrollbar-width: thin;
   text-decoration: none;
   list-style: none;
-  max-height: 8rem;
   .sponsor_img {
-    display: block;
+    animation: sponsors_anim 800ms;
+    animation-fill-mode: backwards;
+    transition: all 500ms linear;
+
+    /* display: block; */
     margin: auto;
     width: 8rem;
-    height: clamp(5rem, 44vw + 0.1rem, 10rem);
+    height: clamp(3rem, 33vw + 0.1rem, 10rem);
     object-fit: contain;
 
     
   }
-  .sponsor_csi{
-    padding-top: 20px;
+  .sponsor_ieee{
+    animation-delay: calc(1 * var(--stagger-delay));
   }
+  .sponsor_iic{
+    animation-delay: calc(2 * var(--stagger-delay));
+  }
+  .sponsor_rec{
+    animation-delay: calc(3 * var(--stagger-delay));
+  }
+  .sponsor_iiic{
+    animation-delay: calc(4 * var(--stagger-delay));
+  }
+  .sponsor_csi{
+    animation-delay: calc(5 * var(--stagger-delay));
+    /* padding-top: 20px; */
+  }
+
 }
 @media only screen and (min-width: 41rem) {
   .sponsors{
@@ -38,17 +83,43 @@
 }
 
 
-.logo{
-  .logo_img_div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .logo_img{
-      width: clamp(13rem, 90vw + 0.12rem,40rem);
-      height: 20rem;
-      object-fit: contain;
-    }
+
+
+@keyframes animate {
+  0% {
+    clip-path: polygon(11% 0, 17% 46%, 11% 100%, 0% 100%, 0 47%, 0 0);
+    transform: scale(0);
+  }
+  50% {
+    clip-path: polygon(69% 3%, 86% 44%, 73% 90%, 0% 90%, 0 47%, 0 0);
+    transform: scale(1.2);
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 37%, 100% 100%, 0% 100%, 0 47%, 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes sponsors_anim {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX(-50%);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0%);
   }
 }
 
 
+.description {
+  text-align: justify;
+  padding: 10%;
+  font-size: clamp(1rem, 10vw + 0.123rem, 1.3rem);
+  color: white;
+  background-image:url(../img/bg.svg);
+}
