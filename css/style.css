@@ -1,0 +1,54 @@
+*, html{
+  padding: 0;
+  margin: 0;
+  background: black;
+}
+
+.sponsors{
+  display: flex;
+  gap: 1rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  text-decoration: none;
+  list-style: none;
+  max-height: 8rem;
+  .sponsor_img {
+    display: block;
+    margin: auto;
+    width: 8rem;
+    height: clamp(5rem, 44vw + 0.1rem, 10rem);
+    object-fit: contain;
+
+    
+  }
+  .sponsor_csi{
+    padding-top: 20px;
+  }
+}
+@media only screen and (min-width: 41rem) {
+  .sponsors{
+    justify-content: space-evenly;
+    align-items: center;
+    .sponsor_iiic{
+      padding-top: 20px;
+    }
+  }
+
+}
+
+
+.logo{
+  .logo_img_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo_img{
+      width: clamp(13rem, 90vw + 0.12rem,40rem);
+      height: 20rem;
+      object-fit: contain;
+    }
+  }
+}
+
+
