@@ -1,4 +1,5 @@
-*, html{
+*,
+html {
   padding: 0;
   margin: 0;
 }
@@ -13,11 +14,11 @@
   --cardMargin: 4vw;
 }
 @font-face {
-  font-family: 'logo';
-  src: url('../static/font/ColoPro-Trial-Black.woff2');
+  font-family: "logo";
+  src: url("../static/font/ColoPro-Trial-Black.woff2");
 }
 
-.logo{
+.logo {
   display: flex;
   font-family: logo;
   font-size: 4rem;
@@ -28,12 +29,58 @@
   animation: sponsors_anim 800ms;
   animation-fill-mode: backwards;
   transition: all 500ms linear;
-
 }
 
-.sponsors{
+.navbar {
+  padding: 20px;
   display: flex;
-  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(#1c9fd8, #ba10b4); */
+}
+
+.navbar li {
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 15px 20px;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 30px 0 0;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   gap: 1rem;
@@ -53,40 +100,33 @@
     width: 8rem;
     height: clamp(3rem, 33vw + 0.1rem, 10rem);
     object-fit: contain;
-
-    
   }
-  .sponsor_ieee{
+  .sponsor_ieee {
     animation-delay: calc(1 * var(--stagger-delay));
   }
-  .sponsor_iic{
+  .sponsor_iic {
     animation-delay: calc(2 * var(--stagger-delay));
   }
-  .sponsor_rec{
+  .sponsor_rec {
     animation-delay: calc(3 * var(--stagger-delay));
   }
-  .sponsor_iiic{
+  .sponsor_iiic {
     animation-delay: calc(4 * var(--stagger-delay));
   }
-  .sponsor_csi{
+  .sponsor_csi {
     animation-delay: calc(5 * var(--stagger-delay));
     /* padding-top: 20px; */
   }
-
 }
 @media only screen and (min-width: 41rem) {
-  .sponsors{
+  .sponsors {
     justify-content: space-evenly;
     align-items: center;
-    .sponsor_iiic{
+    .sponsor_iiic {
       padding-top: 20px;
     }
   }
-
 }
-
-
-
 
 @keyframes animate {
   0% {
@@ -118,24 +158,23 @@
   }
 }
 
-
 .description {
   text-align: justify;
   padding: 10%;
   font-size: clamp(1rem, 10vw + 0.123rem, 1.3rem);
   color: white;
-  background-image:url(../img/bg.svg);
+  background-image: url(../img/bg.svg);
 }
-.navbar{
+.navbar {
   height: 100px;
   list-style: none;
   width: auto;
 }
-.navbar_item{
+.navbar_item {
   text-decoration: none;
 }
 
-.event{
+.event {
   width: 100%;
   position: absolute;
 }
@@ -146,11 +185,11 @@
 
 #cards {
   width: 80%;
-  background: #1C9FD8;
-  background: radial-gradient(at right center, #1C9FD8, #BA10B4);;
+  background: #1c9fd8;
+  background: radial-gradient(at right center, #1c9fd8, #ba10b4);
   list-style: none;
-  padding-left:10%;
-  padding-right:10%;
+  padding-left: 10%;
+  padding-right: 10%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(var(--cards), var(--cardHeight));
@@ -171,8 +210,8 @@
 #card4 {
   --index: 4;
 }
-#card5{
-  --index :5;
+#card5 {
+  --index: 5;
 }
 
 .card {
@@ -198,8 +237,8 @@
   background-color: #d4afb9;
 }
 
-#card5 .card-body{
-  background-color: #BA10B4;
+#card5 .card-body {
+  background-color: #ba10b4;
 }
 
 .card-body {
@@ -218,9 +257,9 @@
 h2 {
   font-size: 2.5em;
 }
-.date{
+.date {
   position: absolute;
   width: 1000px;
   height: 1000px;
- background-color: black;
+  background-color: black;
 }
